@@ -6,7 +6,7 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-contain md:bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${background})` }}
       />
       
@@ -25,7 +25,7 @@ const Hero = () => {
           PLAY TO LEARN
         </p>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
-          Where musicians become bands. Professional music education at Lancaster's iconic Underground Live venue.
+          Where musicians become bands. Professional music education at Camp Hill's iconic Underground Live venue.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
