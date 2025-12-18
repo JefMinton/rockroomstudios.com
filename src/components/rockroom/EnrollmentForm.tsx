@@ -40,6 +40,29 @@ interface EnrollmentFormProps {
   description: string;
 }
 
+// Map database errors to user-friendly messages (prevents info leakage)
+const getEnrollmentErrorMessage = (error: any): string => {
+  const message = error?.message || '';
+  
+  if (message.includes('duplicate key') || message.includes('idx_unique_active_enrollment')) {
+    return 'You have already submitted an enrollment for this program.';
+  }
+  if (message.includes('check_enrollment_rate_limit') || message.includes('Too many enrollment')) {
+    return 'Too many enrollment attempts. Please try again in an hour.';
+  }
+  if (message.includes('violates check constraint')) {
+    return 'Some information provided is invalid. Please check your inputs.';
+  }
+  if (message.includes('not-null constraint')) {
+    return 'Please fill in all required fields.';
+  }
+  if (error.code === 'PGRST116' || error.code === '42501') {
+    return 'Unable to submit enrollment. Please try again.';
+  }
+  
+  return 'Something went wrong. Please try again or contact us for help.';
+};
+
 const EnrollmentForm = ({ programType, title, description }: EnrollmentFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [videoFile, setVideoFile] = useState<File | null>(null);
@@ -81,11 +104,9 @@ const EnrollmentForm = ({ programType, title, description }: EnrollmentFormProps
         if (uploadError) throw uploadError;
         setUploadProgress(50);
 
-        const { data: { publicUrl } } = supabase.storage
-          .from('audition-videos')
-          .getPublicUrl(fileName);
-
-        audition_video_url = publicUrl;
+        // Store the file path (not public URL) since bucket is private
+        // Admins will access via signed URLs
+        audition_video_url = fileName;
         setUploadProgress(70);
       }
 
@@ -127,7 +148,7 @@ const EnrollmentForm = ({ programType, title, description }: EnrollmentFormProps
       setUploadProgress(0);
     } catch (error: any) {
       console.error('Enrollment error:', error);
-      toast.error(error.message || "Something went wrong. Please try again.");
+      toast.error(getEnrollmentErrorMessage(error));
     } finally {
       setIsSubmitting(false);
     }
