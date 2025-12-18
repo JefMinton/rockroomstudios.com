@@ -47,7 +47,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Location</div>
-                  <div className="text-foreground">The Underground Live, Lancaster PA</div>
+                  <div className="text-foreground">The Underground Live, Camp Hill PA</div>
                 </div>
               </div>
             </div>
