@@ -15,11 +15,11 @@ const Programs = () => {
         </p>
         
         <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Band Practice (Sandbox) */}
+          {/* Rock Class (Sandbox) */}
           <div className="rock-card p-8 rounded-sm flex flex-col h-full">
             <div className="flex items-center gap-3 mb-4">
               <Zap className="w-8 h-8 text-primary" />
-              <h3 className="font-oswald text-2xl font-bold">BAND PRACTICE</h3>
+              <h3 className="font-oswald text-2xl font-bold">ROCK CLASS</h3>
             </div>
             <div className="text-sm text-primary font-semibold uppercase tracking-wider mb-4">
               The Sandbox Sessions
@@ -54,10 +54,10 @@ const Programs = () => {
             </ul>
             
             <a 
-              href="#enroll-band-practice" 
+              href="#enroll-rock-class" 
               className="btn-rock-outline py-3 rounded-sm text-center block"
             >
-              Join Band Practice
+              Join Rock Class
             </a>
           </div>
           
