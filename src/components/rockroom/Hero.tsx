@@ -14,8 +14,8 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
       
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-32">
-        <h1 className="font-oswald text-5xl md:text-7xl lg:text-8xl font-bold text-secondary mb-4">
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">
+        <h1 className="font-oswald text-5xl md:text-7xl lg:text-8xl font-bold text-destructive mb-4">
           ROCK ROOM
         </h1>
         <div className="text-primary neon-glow font-oswald text-2xl md:text-3xl lg:text-4xl font-semibold mb-6">
