@@ -9,39 +9,39 @@
   --font-size: 16px;
   
   /* Rock Room Dark Theme */
-  --background: hsl(0, 0%, 5%);
-  --foreground: hsl(0, 0%, 95%);
-  --card: hsl(0, 0%, 10%);
-  --card-foreground: hsl(0, 0%, 95%);
-  --popover: hsl(0, 0%, 8%);
-  --popover-foreground: hsl(0, 0%, 95%);
+  --background: 0 0% 5%;
+  --foreground: 0 0% 95%;
+  --card: 0 0% 10%;
+  --card-foreground: 0 0% 95%;
+  --popover: 0 0% 8%;
+  --popover-foreground: 0 0% 95%;
   
   /* Neon Green Primary */
-  --primary: hsl(120, 100%, 45%);
-  --primary-foreground: hsl(0, 0%, 5%);
+  --primary: 120 100% 45%;
+  --primary-foreground: 0 0% 5%;
   
   /* Rock Red Accent */
-  --secondary: hsl(0, 85%, 50%);
-  --secondary-foreground: hsl(0, 0%, 100%);
+  --secondary: 0 85% 50%;
+  --secondary-foreground: 0 0% 100%;
   
-  --muted: hsl(0, 0%, 15%);
-  --muted-foreground: hsl(0, 0%, 65%);
-  --accent: hsl(0, 0%, 15%);
-  --accent-foreground: hsl(0, 0%, 95%);
-  --destructive: hsl(0, 85%, 50%);
-  --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(0, 0%, 20%);
-  --input: hsl(0, 0%, 15%);
-  --input-background: hsl(0, 0%, 10%);
-  --switch-background: hsl(0, 0%, 20%);
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 65%;
+  --accent: 0 0% 15%;
+  --accent-foreground: 0 0% 95%;
+  --destructive: 0 85% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 20%;
+  --input: 0 0% 15%;
+  --input-background: 0 0% 10%;
+  --switch-background: 0 0% 20%;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: hsl(120, 100%, 45%);
+  --ring: 120 100% 45%;
   
   /* Rock Room specific colors */
-  --neon-green: hsl(120, 100%, 45%);
-  --rock-red: hsl(0, 85%, 50%);
-  --stage-black: hsl(0, 0%, 3%);
+  --neon-green: 120 100% 45%;
+  --rock-red: 0 85% 50%;
+  --stage-black: 0 0% 3%;
   
   --radius: 0.5rem;
 }
@@ -108,29 +108,29 @@
   /* Neon glow effect */
   .neon-glow {
     text-shadow: 
-      0 0 10px var(--neon-green),
-      0 0 20px var(--neon-green),
-      0 0 40px var(--neon-green);
+      0 0 10px hsl(var(--neon-green)),
+      0 0 20px hsl(var(--neon-green)),
+      0 0 40px hsl(var(--neon-green));
   }
   
   .neon-glow-subtle {
     text-shadow: 
-      0 0 5px var(--neon-green),
-      0 0 10px var(--neon-green);
+      0 0 5px hsl(var(--neon-green)),
+      0 0 10px hsl(var(--neon-green));
   }
   
   .neon-border {
     box-shadow: 
-      0 0 5px var(--neon-green),
-      0 0 10px var(--neon-green),
+      0 0 5px hsl(var(--neon-green)),
+      0 0 10px hsl(var(--neon-green)),
       inset 0 0 5px rgba(0, 255, 0, 0.1);
   }
   
   /* Red accent line */
   .red-line {
     height: 4px;
-    background: var(--rock-red);
-    box-shadow: 0 0 10px var(--rock-red);
+    background: hsl(var(--rock-red));
+    box-shadow: 0 0 10px hsl(var(--rock-red));
   }
   
   /* Rock card style */
@@ -147,7 +147,7 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: var(--rock-red);
+    background: hsl(var(--rock-red));
   }
   
   /* Distressed texture overlay */
@@ -167,28 +167,28 @@
   /* Button styles */
   .btn-rock {
     @apply font-bold uppercase tracking-wider;
-    background: linear-gradient(180deg, var(--neon-green) 0%, hsl(120, 100%, 35%) 100%);
+    background: linear-gradient(180deg, hsl(var(--neon-green)) 0%, hsl(120, 100%, 35%) 100%);
     color: hsl(0, 0%, 5%);
     transition: all 0.3s ease;
   }
   
   .btn-rock:hover {
-    box-shadow: 0 0 20px var(--neon-green);
+    box-shadow: 0 0 20px hsl(var(--neon-green));
     transform: translateY(-2px);
   }
   
   .btn-rock-outline {
     @apply font-bold uppercase tracking-wider;
-    border: 2px solid var(--neon-green);
-    color: var(--neon-green);
+    border: 2px solid hsl(var(--neon-green));
+    color: hsl(var(--neon-green));
     background: transparent;
     transition: all 0.3s ease;
   }
   
   .btn-rock-outline:hover {
-    background: var(--neon-green);
+    background: hsl(var(--neon-green));
     color: hsl(0, 0%, 5%);
-    box-shadow: 0 0 20px var(--neon-green);
+    box-shadow: 0 0 20px hsl(var(--neon-green));
   }
   
   /* Clean scrollbar */
@@ -197,16 +197,16 @@
   }
   
   ::-webkit-scrollbar-track {
-    background: var(--background);
+    background: hsl(var(--background));
   }
   
   ::-webkit-scrollbar-thumb {
-    background: var(--border);
+    background: hsl(var(--border));
     border-radius: 4px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--neon-green);
+    background: hsl(var(--neon-green));
   }
 }
 
