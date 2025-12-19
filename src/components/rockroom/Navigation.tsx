@@ -16,9 +16,13 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+{/* Logo */}
           <a href="#" className="flex items-center gap-3">
-            <img src={logo} alt="Rock Room" className="h-14 w-auto" />
+            <img 
+              src={logo} 
+              alt="Rock Room" 
+              className="h-14 w-auto drop-shadow-[0_0_8px_hsl(var(--primary))] hover:drop-shadow-[0_0_16px_hsl(var(--primary))] transition-all duration-300" 
+            />
           </a>
 
           {/* Desktop Navigation */}
