@@ -1,0 +1,43 @@
+{
+  "sectionTitle": "ABOUT ROCK ROOM",
+  "description": "Rock Room @ The Underground Live is a music education initiative designed to transform musicians into performers. We turn the venue's \"dark hours\" into a learning space where students develop skills, form bands, and take the stage.",
+  "features": [
+    {
+      "icon": "Music",
+      "title": "Professional Instruction",
+      "description": "20+ years of teaching experience from Program Director Jef Minton"
+    },
+    {
+      "icon": "Users",
+      "title": "Build Your Band",
+      "description": "We don't just teach music—we build bands from the ground up"
+    },
+    {
+      "icon": "Mic2",
+      "title": "Real Stage Experience",
+      "description": "Perform on The Underground's professional main stage"
+    },
+    {
+      "icon": "Trophy",
+      "title": "Play to Win",
+      "description": "A musical meritocracy where talent and drive are rewarded"
+    }
+  ],
+  "valueProposition": {
+    "title": "THE VALUE PROPOSITION",
+    "stats": [
+      {
+        "value": "20+",
+        "label": "Years of Teaching Experience"
+      },
+      {
+        "value": "8",
+        "label": "Max Students Per Session"
+      },
+      {
+        "value": "100%",
+        "label": "Real Stage Performance"
+      }
+    ]
+  }
+}

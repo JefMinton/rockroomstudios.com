@@ -1,0 +1,14 @@
+{
+  "headline": "ROCK ROOM",
+  "subheadline": "UNDERGROUND LIVE",
+  "tagline": "PLAY TO LEARN",
+  "description": "Where musicians become bands. Professional music education at Camp Hill's iconic Underground Live venue.",
+  "primaryCta": {
+    "text": "Start Your Journey",
+    "link": "#enroll"
+  },
+  "secondaryCta": {
+    "text": "View Programs",
+    "link": "#programs"
+  }
+}

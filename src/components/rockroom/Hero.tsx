@@ -1,7 +1,10 @@
 import { ChevronDown } from 'lucide-react';
 import background from '@/assets/rockroom-background.jpg';
+import { useHeroContent } from '@/hooks/useContent';
 
 const Hero = () => {
+  const content = useHeroContent();
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -16,24 +19,24 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">
         <h1 className="font-oswald text-5xl md:text-7xl lg:text-8xl font-bold text-destructive mb-4">
-          ROCK ROOM
+          {content.headline}
         </h1>
         <div className="text-primary neon-glow font-oswald text-2xl md:text-3xl lg:text-4xl font-semibold mb-6">
-          UNDERGROUND LIVE
+          {content.subheadline}
         </div>
         <p className="text-xl md:text-2xl text-foreground/90 font-oswald tracking-widest mb-8">
-          PLAY TO LEARN
+          {content.tagline}
         </p>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
-          Where musicians become bands. Professional music education at Camp Hill's iconic Underground Live venue.
+          {content.description}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#enroll" className="btn-rock px-8 py-4 rounded-sm text-lg">
-            Start Your Journey
+          <a href={content.primaryCta.link} className="btn-rock px-8 py-4 rounded-sm text-lg">
+            {content.primaryCta.text}
           </a>
-          <a href="#programs" className="btn-rock-outline px-8 py-4 rounded-sm text-lg">
-            View Programs
+          <a href={content.secondaryCta.link} className="btn-rock-outline px-8 py-4 rounded-sm text-lg">
+            {content.secondaryCta.text}
           </a>
         </div>
       </div>

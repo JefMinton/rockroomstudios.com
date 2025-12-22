@@ -1,0 +1,52 @@
+{
+  "sectionTitle": "OUR PROGRAMS",
+  "sectionDescription": "From sandbox to stage—choose the path that fits your musical journey.",
+  "programs": [
+    {
+      "id": "rock-class",
+      "title": "ROCK CLASS",
+      "subtitle": "The Sandbox Sessions",
+      "icon": "Zap",
+      "description": "The entry point—a low-pressure, high-energy environment for musicians to find their footing. Weekly guided group sessions where adaptability is key.",
+      "price": 100,
+      "priceUnit": "month",
+      "priceNote": "First class is FREE!",
+      "features": [
+        "Weekly 60-minute guided group sessions",
+        "Youth & Adult sessions available",
+        "Max 8 musicians per session",
+        "Learn to adapt—\"Play the hand you're dealt\"",
+        "Ongoing enrollment, withdraw anytime",
+        "Recruitment funnel for Flagship program"
+      ],
+      "ctaText": "Join Rock Class",
+      "ctaLink": "#enroll-rock-class",
+      "badge": null,
+      "featured": false,
+      "active": true
+    },
+    {
+      "id": "rock-band",
+      "title": "ROCK BAND",
+      "subtitle": "The Flagship Program",
+      "icon": "Star",
+      "description": "For musicians ready to commit. A dual-track mentorship designed to take you from solitary practice to a headline performance on The Underground's main stage.",
+      "price": 800,
+      "priceUnit": "8-week session",
+      "priceNote": "Invitation or Audition Only",
+      "features": [
+        "8 weekly one-on-one private lessons",
+        "8 weekly professional band rehearsals",
+        "Culminates in a ticketed showcase concert",
+        "Selected based on talent, drive & chemistry",
+        "This isn't \"pay-to-play\"—it's \"play-to-win\"",
+        "Scholarship opportunities available"
+      ],
+      "ctaText": "Submit Your Audition",
+      "ctaLink": "#enroll-rock-band",
+      "badge": "Audition Required",
+      "featured": true,
+      "active": true
+    }
+  ]
+}

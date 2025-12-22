@@ -1,6 +1,9 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { useContactContent } from '@/hooks/useContent';
 
 const Contact = () => {
+  const content = useContactContent();
+  
   return (
     <section id="contact" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -11,7 +14,7 @@ const Contact = () => {
         </h2>
         
         <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16 text-lg">
-          Have questions? Reach out to Program Director Jef Minton.
+          {content.description}
         </p>
         
         <div className="max-w-2xl mx-auto">
@@ -23,8 +26,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Email</div>
-                  <a href="mailto:jeff.a.minton@gmail.com" className="text-foreground hover:text-primary transition-colors">
-                    jeff.a.minton@gmail.com
+                  <a href={`mailto:${content.contactInfo.email}`} className="text-foreground hover:text-primary transition-colors">
+                    {content.contactInfo.email}
                   </a>
                 </div>
               </div>
@@ -35,8 +38,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Phone</div>
-                  <a href="tel:717-417-8806" className="text-foreground hover:text-primary transition-colors">
-                    (717) 417-8806
+                  <a href={`tel:${content.contactInfo.phone.replace(/[^0-9]/g, '')}`} className="text-foreground hover:text-primary transition-colors">
+                    {content.contactInfo.phone}
                   </a>
                 </div>
               </div>
@@ -47,16 +50,16 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Location</div>
-                  <div className="text-foreground">The Underground Live, Camp Hill PA</div>
+                  <div className="text-foreground">{content.contactInfo.location}</div>
                 </div>
               </div>
             </div>
             
             <div className="mt-8 pt-8 border-t border-border">
-              <h3 className="font-oswald text-lg font-semibold mb-2">Jef Minton</h3>
-              <div className="text-primary text-sm uppercase tracking-wider">Program Director</div>
+              <h3 className="font-oswald text-lg font-semibold mb-2">{content.director.name}</h3>
+              <div className="text-primary text-sm uppercase tracking-wider">{content.director.title}</div>
               <p className="text-muted-foreground text-sm mt-2">
-                20+ years of teaching experience. Ready to help you become the musician you want to be.
+                {content.director.bio}
               </p>
             </div>
           </div>
