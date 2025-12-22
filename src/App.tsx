@@ -1,28 +1,46 @@
 import { HelmetProvider } from 'react-helmet-async';
-import Navigation from './components/rockroom/Navigation';
-import Hero from './components/rockroom/Hero';
-import About from './components/rockroom/About';
-import Programs from './components/rockroom/Programs';
-import EnrollSection from './components/rockroom/EnrollSection';
-import Contact from './components/rockroom/Contact';
-import Footer from './components/rockroom/Footer';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from './components/ui/sonner';
+import HomePage from './pages/HomePage';
+import Login from './pages/admin/Login';
+import Dashboard from './pages/admin/Dashboard';
+import HeroEditor from './pages/admin/HeroEditor';
+import ProgramsEditor from './pages/admin/ProgramsEditor';
+import AboutEditor from './pages/admin/AboutEditor';
+import Enrollments from './pages/admin/Enrollments';
+import AdminLayout from './components/admin/AdminLayout';
+import AuthGuard from './components/admin/AuthGuard';
 
 export default function App() {
   return (
     <HelmetProvider>
-      <div className="min-h-screen bg-background text-foreground">
-        <Navigation />
-        <main>
-          <Hero />
-          <About />
-          <Programs />
-          <EnrollSection />
-          <Contact />
-        </main>
-        <Footer />
+      <Router>
+        <Routes>
+          {/* Public Routes */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/admin/login" element={<Login />} />
+          
+          {/* Protected Admin Routes */}
+          <Route
+            path="/admin"
+            element={
+              <AuthGuard>
+                <AdminLayout />
+              </AuthGuard>
+            }
+          >
+            <Route index element={<Dashboard />} />
+            <Route path="hero" element={<HeroEditor />} />
+            <Route path="programs" element={<ProgramsEditor />} />
+            <Route path="about" element={<AboutEditor />} />
+            <Route path="enrollments" element={<Enrollments />} />
+          </Route>
+          
+          {/* Catch-all redirect */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
         <Toaster position="top-center" />
-      </div>
+      </Router>
     </HelmetProvider>
   );
 }
