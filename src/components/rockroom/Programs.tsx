@@ -22,7 +22,9 @@ const Programs = () => {
           {content.programs.map((program) => {
             const Icon = iconMap[program.icon];
             const isRockBand = program.id === 'rock-band';
-            const colorClass = isRockBand ? 'secondary' : 'primary';
+            const iconColor = isRockBand ? 'text-secondary' : 'text-primary';
+            const textColor = isRockBand ? 'text-secondary' : 'text-primary';
+            const checkColor = isRockBand ? 'text-secondary' : 'text-primary';
             
             return (
               <div key={program.id} className="rock-card p-8 rounded-sm flex flex-col h-full relative overflow-hidden">
@@ -34,10 +36,10 @@ const Programs = () => {
                 )}
                 
                 <div className="flex items-center gap-3 mb-4">
-                  <Icon className={`w-8 h-8 text-${colorClass}`} />
+                  <Icon className={`w-8 h-8 ${iconColor}`} />
                   <h3 className="font-oswald text-2xl font-bold">{program.title}</h3>
                 </div>
-                <div className={`text-sm text-${colorClass} font-semibold uppercase tracking-wider mb-4`}>
+                <div className={`text-sm ${textColor} font-semibold uppercase tracking-wider mb-4`}>
                   {program.subtitle}
                 </div>
                 
@@ -57,7 +59,7 @@ const Programs = () => {
                 <ul className="space-y-3 mb-8 flex-grow">
                   {program.features.map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm">
-                      <Check className={`w-5 h-5 text-${colorClass} flex-shrink-0 mt-0.5`} />
+                      <Check className={`w-5 h-5 ${checkColor} flex-shrink-0 mt-0.5`} />
                       <span>{item}</span>
                     </li>
                   ))}
