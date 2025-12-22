@@ -1,28 +1,9 @@
 import { Music, Users, Mic2, Trophy } from 'lucide-react';
+import { useAboutContent } from '@/hooks/useContent';
 
 const About = () => {
-  const features = [
-    {
-      icon: Music,
-      title: "Professional Instruction",
-      description: "20+ years of teaching experience from Program Director Jef Minton"
-    },
-    {
-      icon: Users,
-      title: "Build Your Band",
-      description: "We don't just teach music—we build bands from the ground up"
-    },
-    {
-      icon: Mic2,
-      title: "Real Stage Experience",
-      description: "Perform on The Underground's professional main stage"
-    },
-    {
-      icon: Trophy,
-      title: "Play to Win",
-      description: "A musical meritocracy where talent and drive are rewarded"
-    }
-  ];
+  const content = useAboutContent();
+  const iconMap: Record<string, typeof Music> = { Music, Users, Mic2, Trophy };
 
   return (
     <section id="about" className="py-24 bg-background texture-overlay">
@@ -35,22 +16,23 @@ const About = () => {
         </h2>
         
         <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-16 text-lg">
-          Rock Room @ The Underground Live is a music education initiative designed to transform 
-          musicians into performers. We turn the venue's "dark hours" into a learning space where 
-          students develop skills, form bands, and take the stage.
+          {content.description}
         </p>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className="rock-card p-6 rounded-sm hover:border-primary/50 transition-all duration-300"
-            >
-              <feature.icon className="w-10 h-10 text-primary mb-4" />
-              <h3 className="font-oswald text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-muted-foreground text-sm">{feature.description}</p>
-            </div>
-          ))}
+          {content.features.map((feature, index) => {
+            const Icon = iconMap[feature.icon];
+            return (
+              <div 
+                key={index}
+                className="rock-card p-6 rounded-sm hover:border-primary/50 transition-all duration-300"
+              >
+                <Icon className="w-10 h-10 text-primary mb-4" />
+                <h3 className="font-oswald text-xl font-semibold mb-2">{feature.title}</h3>
+                <p className="text-muted-foreground text-sm">{feature.description}</p>
+              </div>
+            );
+          })}
         </div>
         
         {/* Value proposition */}
@@ -59,18 +41,12 @@ const About = () => {
             THE <span className="text-primary">VALUE</span> PROPOSITION
           </h3>
           <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">20+</div>
-              <div className="text-muted-foreground">Years of Teaching Experience</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">8</div>
-              <div className="text-muted-foreground">Max Students Per Session</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">100%</div>
-              <div className="text-muted-foreground">Real Stage Performance</div>
-            </div>
+            {content.valueProposition.stats.map((stat, index) => (
+              <div key={index}>
+                <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
+                <div className="text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

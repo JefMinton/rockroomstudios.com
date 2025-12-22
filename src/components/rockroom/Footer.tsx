@@ -1,14 +1,17 @@
 import logo from '@/assets/rockroom-logo.png';
+import { useSiteContent } from '@/hooks/useContent';
 
 const Footer = () => {
+  const content = useSiteContent();
+  
   return (
     <footer className="bg-background border-t border-border py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-4">
-            <img src={logo} alt="Rock Room" className="h-16 w-auto" />
+            <img src={logo} alt={content.siteName} className="h-16 w-auto" />
             <div>
-              <div className="font-oswald text-xl font-bold">ROCK ROOM</div>
+              <div className="font-oswald text-xl font-bold">{content.siteName.toUpperCase()}</div>
               <div className="text-primary text-sm">@ THE UNDERGROUND LIVE</div>
             </div>
           </div>
@@ -24,7 +27,7 @@ const Footer = () => {
         <div className="red-line w-full my-8" />
         
         <div className="text-center text-muted-foreground text-sm">
-          <p>&copy; {new Date().getFullYear()} Rock Room @ The Underground Live. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {content.siteName} @ The Underground Live. All rights reserved.</p>
           <p className="mt-2">Play to Learn. Play to Win.</p>
         </div>
       </div>
