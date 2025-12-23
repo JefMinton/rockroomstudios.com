@@ -4,10 +4,11 @@ import background from '@/assets/rockroom-background.jpg';
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-contain md:bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${background})` }}
+      {/* Background Image - scales proportionally */}
+      <img 
+        src={background}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
       
       {/* Overlay */}
