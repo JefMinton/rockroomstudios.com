@@ -23,9 +23,15 @@ const Footer = () => {
         
         <div className="red-line w-full my-8" />
         
-        <div className="text-center text-muted-foreground text-sm">
+        <div className="flex flex-col items-center gap-2 text-muted-foreground text-sm">
           <p>&copy; {new Date().getFullYear()} Rock Room @ The Underground Live. All rights reserved.</p>
-          <p className="mt-2">Play to Learn. Play to Win.</p>
+          <p>Play to Learn. Play to Win.</p>
+          <a 
+            href="/admin/login" 
+            className="mt-2 text-xs text-muted-foreground/50 hover:text-primary transition-colors"
+          >
+            Admin
+          </a>
         </div>
       </div>
     </footer>
