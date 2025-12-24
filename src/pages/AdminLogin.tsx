@@ -1,13 +1,25 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { toast } from 'sonner';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Eye, EyeOff } from 'lucide-react';
+import { z } from 'zod';
 import logo from '@/assets/rockroom-logo.png';
 
+const loginSchema = z.object({
+  email: z.string().trim().email({ message: "Invalid email address" }),
+  password: z.string().min(6, { message: "Password must be at least 6 characters" }),
+});
+
 export default function AdminLogin() {
-  const { user, isAdmin, isLoading, signInWithGoogle } = useAuth();
+  const { user, isAdmin, isLoading, signInWithEmail, signUpWithEmail, signInWithGoogle } = useAuth();
   const navigate = useNavigate();
+  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (!isLoading && user) {
@@ -18,6 +30,45 @@ export default function AdminLogin() {
       }
     }
   }, [user, isAdmin, isLoading, navigate]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const validation = loginSchema.safeParse({ email, password });
+    if (!validation.success) {
+      toast.error(validation.error.errors[0].message);
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      if (isSignUp) {
+        const { error } = await signUpWithEmail(email, password);
+        if (error) {
+          if (error.message.includes('already registered')) {
+            toast.error('This email is already registered. Try signing in instead.');
+          } else {
+            toast.error(error.message);
+          }
+        } else {
+          toast.success('Account created! You can now sign in.');
+          setIsSignUp(false);
+        }
+      } else {
+        const { error } = await signInWithEmail(email, password);
+        if (error) {
+          if (error.message.includes('Invalid login')) {
+            toast.error('Invalid email or password');
+          } else {
+            toast.error(error.message);
+          }
+        }
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const handleGoogleLogin = async () => {
     const { error } = await signInWithGoogle();
@@ -44,9 +95,69 @@ export default function AdminLogin() {
         />
         
         <h1 className="font-oswald text-3xl font-bold mb-2">Admin Access</h1>
-        <p className="text-muted-foreground mb-8">
-          Sign in with your authorized Google account to access the admin panel.
+        <p className="text-muted-foreground mb-6">
+          {isSignUp ? 'Create your admin account' : 'Sign in to access the admin panel'}
         </p>
+        
+        <form onSubmit={handleSubmit} className="space-y-4 mb-6">
+          <div>
+            <input
+              type="email"
+              placeholder="Email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full bg-card border border-border px-4 py-3 rounded-sm focus:outline-none focus:ring-2 focus:ring-primary"
+              autoComplete="email"
+            />
+          </div>
+          
+          <div className="relative">
+            <input
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full bg-card border border-border px-4 py-3 rounded-sm focus:outline-none focus:ring-2 focus:ring-primary pr-12"
+              autoComplete={isSignUp ? 'new-password' : 'current-password'}
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+            >
+              {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+            </button>
+          </div>
+          
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 py-3 rounded-sm transition-colors disabled:opacity-50"
+          >
+            {isSubmitting ? (
+              <Loader2 className="w-5 h-5 animate-spin mx-auto" />
+            ) : (
+              isSignUp ? 'Create Account' : 'Sign In'
+            )}
+          </button>
+        </form>
+        
+        <button
+          type="button"
+          onClick={() => setIsSignUp(!isSignUp)}
+          className="text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
+        >
+          {isSignUp ? 'Already have an account? Sign in' : "First time? Create an account"}
+        </button>
+        
+        <div className="relative mb-6">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-border" />
+          </div>
+          <div className="relative flex justify-center text-xs uppercase">
+            <span className="bg-card px-2 text-muted-foreground">Or</span>
+          </div>
+        </div>
         
         <button
           onClick={handleGoogleLogin}
