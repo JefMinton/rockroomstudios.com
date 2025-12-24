@@ -83,6 +83,7 @@ export type Database = {
           referral_source: string | null
           state: string
           status: string
+          user_id: string | null
           years_playing: number | null
           zip: string
         }
@@ -109,6 +110,7 @@ export type Database = {
           referral_source?: string | null
           state: string
           status?: string
+          user_id?: string | null
           years_playing?: number | null
           zip: string
         }
@@ -135,6 +137,7 @@ export type Database = {
           referral_source?: string | null
           state?: string
           status?: string
+          user_id?: string | null
           years_playing?: number | null
           zip?: string
         }

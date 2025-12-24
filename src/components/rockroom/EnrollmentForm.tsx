@@ -132,8 +132,9 @@ const EnrollmentForm = ({ programType, title, description }: EnrollmentFormProps
         setUploadProgress(70);
       }
 
-      // Insert enrollment
+      // Insert enrollment with user_id for RLS
       const { error } = await supabase.from('enrollments').insert({
+        user_id: user.id,
         program_type: programType,
         first_name: data.first_name,
         last_name: data.last_name,
