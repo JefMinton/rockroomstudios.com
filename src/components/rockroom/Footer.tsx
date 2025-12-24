@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '@/assets/rockroom-logo.png';
 
 const Footer = () => {
@@ -26,12 +27,12 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-2 text-muted-foreground text-sm">
           <p>&copy; {new Date().getFullYear()} Rock Room @ The Underground Live. All rights reserved.</p>
           <p>Play to Learn. Play to Win.</p>
-          <a 
-            href="/admin/login" 
+          <Link 
+            to="/admin/login" 
             className="mt-2 text-xs text-muted-foreground/50 hover:text-primary transition-colors"
           >
             Admin
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
