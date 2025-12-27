@@ -1,4 +1,4 @@
-import { Music, Users, Mic2, Trophy } from 'lucide-react';
+import { Music, Users, Mic2 } from 'lucide-react';
 
 const About = () => {
   const features = [
@@ -17,11 +17,6 @@ const About = () => {
       title: "Real Stage Experience",
       description: "Perform on The Underground's professional main stage"
     },
-    {
-      icon: Trophy,
-      title: "Play to Win",
-      description: "A musical meritocracy where talent and drive are rewarded"
-    }
   ];
 
   return (
@@ -53,26 +48,6 @@ const About = () => {
           ))}
         </div>
         
-        {/* Value proposition */}
-        <div className="mt-16 rock-card p-8 md:p-12 rounded-sm">
-          <h3 className="font-oswald text-2xl md:text-3xl font-bold mb-6 text-center">
-            THE <span className="text-primary">VALUE</span> PROPOSITION
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">20+</div>
-              <div className="text-muted-foreground">Years of Teaching Experience</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">8</div>
-              <div className="text-muted-foreground">Max Students Per Session</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">100%</div>
-              <div className="text-muted-foreground">Real Stage Performance</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
