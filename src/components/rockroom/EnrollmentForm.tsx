@@ -2,11 +2,9 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
-import { useAuth } from '@/contexts/AuthContext';
 import { toast } from 'sonner';
-import { Loader2, Upload, X, LogIn } from 'lucide-react';
+import { Loader2, Upload, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
@@ -66,7 +64,6 @@ const getEnrollmentErrorMessage = (error: any): string => {
 };
 
 const EnrollmentForm = ({ programType, title, description }: EnrollmentFormProps) => {
-  const { user, isLoading: authLoading } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [videoFile, setVideoFile] = useState<File | null>(null);
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -77,25 +74,6 @@ const EnrollmentForm = ({ programType, title, description }: EnrollmentFormProps
       experience_level: 'beginner'
     }
   });
-
-  // Show login prompt if not authenticated
-  if (!authLoading && !user) {
-    return (
-      <div className="rock-card p-6 md:p-8 rounded-sm text-center">
-        <LogIn className="w-12 h-12 mx-auto mb-4 text-primary" />
-        <h3 className="font-oswald text-2xl font-bold mb-2">{title}</h3>
-        <p className="text-muted-foreground mb-6">
-          Please sign in or create an account to submit your enrollment application.
-        </p>
-        <Link 
-          to="/admin/login" 
-          className="btn-rock inline-block px-8 py-3 rounded-sm"
-        >
-          Sign In to Enroll
-        </Link>
-      </div>
-    );
-  }
 
   const handleVideoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -132,9 +110,8 @@ const EnrollmentForm = ({ programType, title, description }: EnrollmentFormProps
         setUploadProgress(70);
       }
 
-      // Insert enrollment with user_id for RLS
+      // Insert enrollment (public form - no user_id needed)
       const { error } = await supabase.from('enrollments').insert({
-        user_id: user.id,
         program_type: programType,
         first_name: data.first_name,
         last_name: data.last_name,
