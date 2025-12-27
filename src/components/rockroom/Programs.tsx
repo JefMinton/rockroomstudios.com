@@ -33,11 +33,17 @@ const Programs = () => {
               Open Enrollment. Minimal experience required. Full band environment. All instruments welcome. A low-pressure, high-energy environment to find your footing, try out different instruments and band roles, jam with a variety of other musicians, socialize, and build confidence before hitting the main stage.
             </p>
             
-            <div className="mb-6">
+            <div className="mb-4">
               <div className="text-3xl font-bold text-foreground">
                 $100<span className="text-lg text-muted-foreground font-normal">/month</span>
               </div>
               <div className="text-sm text-primary mt-1">First class is FREE!</div>
+            </div>
+            
+            <div className="bg-primary/10 border border-primary/30 rounded-sm p-3 mb-6">
+              <p className="text-sm text-primary font-semibold">
+                📢 Enrollment now open for the week of January 15th, pending min enrollment. Stay tuned for updates on meeting times!
+              </p>
             </div>
             
             <ul className="space-y-3 mb-8">
@@ -56,7 +62,7 @@ const Programs = () => {
             </ul>
             
             <a 
-              href="#enroll-rock-class" 
+              href="#enroll-band-practice" 
               className="btn-rock-outline py-3 rounded-sm text-center block mt-auto"
             >
               Join Band Class
@@ -82,11 +88,17 @@ const Programs = () => {
               Admission by Audition or Invitation Only. For serious rockers. We select students based on talent, drive, and chemistry to form committed bands and train them to succeed beyond the 8-week scope of the session.
             </p>
             
-            <div className="mb-6">
+            <div className="mb-4">
               <div className="text-3xl font-bold text-foreground">
                 $800<span className="text-lg text-muted-foreground font-normal">/8-week session</span>
               </div>
               <div className="text-sm text-muted-foreground mt-1">Youth & Adult sessions available</div>
+            </div>
+            
+            <div className="bg-secondary/10 border border-secondary/30 rounded-sm p-3 mb-6">
+              <p className="text-sm text-secondary font-semibold">
+                📢 Enrollment now open for the week of January 15th, pending min enrollment. Stay tuned for updates on meeting times!
+              </p>
             </div>
             
             <ul className="space-y-3 mb-8">
