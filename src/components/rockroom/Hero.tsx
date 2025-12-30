@@ -1,16 +1,15 @@
 import { ChevronDown } from 'lucide-react';
 import heroLogo from '@/assets/rockfu-hero-logo.jpg';
-import bannerBg from '@/assets/rockfu-banner-bg.jpg';
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Banner Background Image */}
+      {/* Glowing Red Stripe */}
       <div 
-        className="absolute top-32 md:top-40 left-0 right-0 h-32 md:h-40 bg-no-repeat bg-center"
+        className="absolute top-0 left-0 right-0 h-1 md:h-1.5"
         style={{ 
-          backgroundImage: `url(${bannerBg})`,
-          backgroundSize: '100% auto'
+          background: 'linear-gradient(90deg, transparent, hsl(var(--rock-red)), transparent)',
+          boxShadow: '0 0 20px hsl(var(--rock-red)), 0 0 40px hsl(var(--rock-red) / 0.5), 0 0 60px hsl(var(--rock-red) / 0.3)'
         }}
       />
       
