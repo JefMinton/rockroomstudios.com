@@ -1,9 +1,16 @@
 import { ChevronDown } from 'lucide-react';
 import heroLogo from '@/assets/rockfu-hero-logo.jpg';
+import bannerBg from '@/assets/rockfu-banner-bg.jpg';
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Background Image */}
+      <img 
+        src={bannerBg}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">
