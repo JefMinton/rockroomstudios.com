@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '@/assets/rockroom-logo.png';
+import logo from '@/assets/rockfu-circular-logo.jpg';
 
 const Footer = () => {
   return (
@@ -7,9 +7,9 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-4">
-            <img src={logo} alt="Rock Room" className="h-16 w-auto" />
+            <img src={logo} alt="Rock Fu" className="h-16 w-auto" />
             <div>
-              <div className="font-oswald text-xl font-bold">ROCK ROOM</div>
+              <div className="font-oswald text-xl font-bold">ROCK FU</div>
               <div className="text-primary text-sm">@ THE UNDERGROUND LIVE</div>
             </div>
           </div>
@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="red-line w-full my-8" />
         
         <div className="flex flex-col items-center gap-2 text-muted-foreground text-sm">
-          <p>&copy; {new Date().getFullYear()} Rock Room @ The Underground Live. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Rock Fu @ The Underground Live. All rights reserved.</p>
           <p>Play to Learn. Play to Win.</p>
           <Link 
             to="/admin/login" 

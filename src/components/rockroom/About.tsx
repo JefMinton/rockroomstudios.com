@@ -26,11 +26,11 @@ const About = () => {
         <div className="red-line w-24 mx-auto mb-8" />
         
         <h2 className="font-oswald text-4xl md:text-5xl font-bold text-center mb-6">
-          ABOUT <span className="text-primary neon-glow-subtle">ROCK ROOM</span>
+          ABOUT <span className="text-primary neon-glow-subtle">ROCK FU</span>
         </h2>
         
         <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-16 text-lg">
-          Rock Room @ The Underground Live is a music education initiative designed to transform 
+          Rock Fu @ The Underground Live is a music education initiative designed to transform 
           musicians into performers. We turn the venue's "dark hours" into a learning space where 
           students develop skills, form bands, and take the stage.
         </p>
