@@ -6,12 +6,12 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Banner Background Image */}
-      <div className="absolute top-0 left-0 right-0 h-48 md:h-64 lg:h-80">
+      <div className="absolute top-32 md:top-40 left-0 right-0 h-96 md:h-[500px] lg:h-[600px] flex items-center justify-center">
         <img 
           src={bannerBg}
           alt=""
-          className="w-full h-full object-cover object-top"
-          style={{ objectPosition: 'center 20%' }}
+          className="w-full h-full object-contain"
+          style={{ transform: 'scale(0.35)' }}
         />
       </div>
       
