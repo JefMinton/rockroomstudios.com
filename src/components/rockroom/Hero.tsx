@@ -1,5 +1,5 @@
 import { ChevronDown } from 'lucide-react';
-import heroLogo from '@/assets/rockfu-hero-logo.jpg';
+import heroLogo from '@/assets/rockfu-hero-logo.png';
 
 const Hero = () => {
   return (
