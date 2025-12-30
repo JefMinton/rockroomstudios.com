@@ -5,12 +5,15 @@ import bannerBg from '@/assets/rockfu-banner-bg.jpg';
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Background Image */}
-      <img 
-        src={bannerBg}
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover object-center"
-      />
+      {/* Banner Background Image */}
+      <div className="absolute top-0 left-0 right-0 h-48 md:h-64 lg:h-80">
+        <img 
+          src={bannerBg}
+          alt=""
+          className="w-full h-full object-cover object-top"
+          style={{ objectPosition: 'center 20%' }}
+        />
+      </div>
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">
