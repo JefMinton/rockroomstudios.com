@@ -16,10 +16,10 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border overflow-hidden">
       {/* Glowing Red Stripe Background */}
       <div 
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0"
         style={{ 
-          background: 'linear-gradient(90deg, transparent, hsl(var(--rock-red)), transparent)',
-          boxShadow: '0 0 40px hsl(var(--rock-red) / 0.5)'
+          background: 'linear-gradient(180deg, transparent 20%, hsl(var(--rock-red) / 0.4) 50%, transparent 80%)',
+          boxShadow: 'inset 0 0 30px hsl(var(--rock-red) / 0.3), 0 0 20px hsl(var(--rock-red) / 0.2)'
         }}
       />
       <div className="container mx-auto px-4 relative z-10">
