@@ -2,117 +2,78 @@ import { motion } from 'framer-motion';
 
 const RockFuLogo = () => {
   return (
-    <div className="relative inline-block">
-      {/* Main Logo Container */}
-      <div className="flex items-end gap-1">
-        {/* ROCK text with rock styling */}
-        <motion.span 
-          className="font-oswald text-5xl md:text-7xl lg:text-8xl font-black text-destructive tracking-tight"
-          style={{
-            textShadow: '3px 3px 0px hsl(var(--background)), 6px 6px 0px hsl(var(--primary) / 0.3)',
-            letterSpacing: '-0.02em'
-          }}
-          initial={{ x: -20, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          {/* R with headband accent */}
-          <span className="relative inline-block">
-            R
-            {/* Headband element */}
-            <span 
-              className="absolute top-[15%] left-[-5%] w-[110%] h-[12%] bg-primary rounded-sm"
-              style={{
-                transform: 'rotate(-3deg)',
-                boxShadow: '0 0 10px hsl(var(--primary) / 0.5)'
-              }}
-            />
-            {/* Headband tail */}
-            <span 
-              className="absolute top-[12%] right-[-35%] w-[40%] h-[6%] bg-primary rounded-full origin-left"
-              style={{
-                transform: 'rotate(25deg)',
-                boxShadow: '0 0 8px hsl(var(--primary) / 0.4)'
-              }}
-            />
-            <span 
-              className="absolute top-[20%] right-[-40%] w-[35%] h-[5%] bg-primary rounded-full origin-left"
-              style={{
-                transform: 'rotate(15deg)',
-                boxShadow: '0 0 8px hsl(var(--primary) / 0.4)'
-              }}
-            />
-          </span>
-          OCK
-        </motion.span>
-
-        {/* Fu - styled as kung fu with brush stroke aesthetic */}
-        <motion.span 
-          className="relative font-oswald text-4xl md:text-6xl lg:text-7xl font-bold text-primary ml-2"
-          style={{
-            fontStyle: 'italic',
-            textShadow: '0 0 20px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.3)',
-          }}
-          initial={{ x: 20, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-        >
-          {/* F with drumstick accent */}
-          <span className="relative inline-block">
-            F
-            {/* Drumstick hitting motion lines */}
-            <motion.span 
-              className="absolute bottom-[5%] right-[-20%] text-xs md:text-sm text-destructive/60"
-              animate={{ 
-                opacity: [0.4, 1, 0.4],
-                scale: [0.9, 1.1, 0.9]
-              }}
-              transition={{ 
-                duration: 0.8, 
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
-              ⚡
-            </motion.span>
-          </span>
-          <span className="relative inline-block">
-            u
-            {/* Impact effect on u */}
-            <motion.span 
-              className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-destructive via-primary to-transparent rounded-full"
-              animate={{ 
-                scaleX: [0.8, 1, 0.8],
-                opacity: [0.5, 1, 0.5]
-              }}
-              transition={{ 
-                duration: 1, 
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </span>
-        </motion.span>
-      </div>
-
-      {/* Decorative elements */}
-      <div className="absolute -bottom-2 left-0 w-full flex justify-center gap-1">
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: [0.3, 0.8, 0.3], y: 0 }}
-            transition={{ 
-              duration: 1.5, 
-              delay: i * 0.1,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
+    <motion.div 
+      className="relative inline-block"
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      {/* Diagonal slash accent behind text */}
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] pointer-events-none"
+      >
+        <svg viewBox="0 0 100 100" className="w-full h-full" preserveAspectRatio="none">
+          {/* Brush stroke slash */}
+          <path 
+            d="M15 85 Q50 50 85 15" 
+            stroke="hsl(var(--primary))" 
+            strokeWidth="2" 
+            fill="none" 
+            opacity="0.4"
+            strokeLinecap="round"
           />
-        ))}
+          <path 
+            d="M20 90 Q55 55 90 20" 
+            stroke="hsl(var(--destructive))" 
+            strokeWidth="1.5" 
+            fill="none" 
+            opacity="0.3"
+            strokeLinecap="round"
+          />
+        </svg>
       </div>
-    </div>
+
+      {/* Main text container */}
+      <div className="relative flex items-baseline">
+        {/* ROCK - Heavy, bold, destructive red */}
+        <span 
+          className="font-oswald text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight"
+          style={{
+            color: 'hsl(var(--destructive))',
+            textShadow: `
+              2px 2px 0px hsl(var(--background)),
+              4px 4px 0px hsl(var(--primary) / 0.2),
+              0 0 30px hsl(var(--destructive) / 0.3)
+            `,
+            letterSpacing: '-0.03em',
+          }}
+        >
+          ROCK
+        </span>
+
+        {/* Fu - Styled as martial arts with brush stroke feel */}
+        <span 
+          className="relative font-oswald text-4xl md:text-6xl lg:text-7xl font-bold ml-3 md:ml-4"
+          style={{
+            background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.7) 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            filter: 'drop-shadow(0 0 20px hsl(var(--primary) / 0.5))',
+            fontStyle: 'italic',
+            letterSpacing: '0.02em',
+          }}
+        >
+          {/* Brush underline accent */}
+          <span className="absolute -bottom-1 md:-bottom-2 left-0 w-full h-[3px] md:h-1 bg-gradient-to-r from-primary via-primary to-transparent rounded-full opacity-80" />
+          Fu
+        </span>
+      </div>
+
+      {/* Subtle corner accents - martial arts frame */}
+      <div className="absolute -top-2 -left-4 w-6 h-6 md:w-8 md:h-8 border-t-2 border-l-2 border-primary/40" />
+      <div className="absolute -bottom-2 -right-4 w-6 h-6 md:w-8 md:h-8 border-b-2 border-r-2 border-primary/40" />
+    </motion.div>
   );
 };
 
