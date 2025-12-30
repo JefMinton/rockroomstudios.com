@@ -7,7 +7,7 @@ const Programs = () => {
         <div className="red-line w-24 mx-auto mb-8" />
         
         <h2 className="font-oswald text-4xl md:text-5xl font-bold text-center mb-6">
-          ROCK ROOM @ <span className="text-primary neon-glow-subtle">THE UNDERGROUND</span>
+          ROCK FU @ <span className="text-primary neon-glow-subtle">THE UNDERGROUND</span>
         </h2>
         
         <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-4 text-lg">

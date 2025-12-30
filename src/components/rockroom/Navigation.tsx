@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '@/assets/rockroom-logo.png';
+import logo from '@/assets/rockfu-circular-logo.jpg';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ const Navigation = () => {
           <a href="#" className="flex items-center gap-3">
             <img 
               src={logo} 
-              alt="Rock Room" 
+              alt="Rock Fu" 
               className="h-14 w-auto drop-shadow-[0_0_8px_hsl(var(--primary))] hover:drop-shadow-[0_0_16px_hsl(var(--primary))] transition-all duration-300" 
             />
           </a>
