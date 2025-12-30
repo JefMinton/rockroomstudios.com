@@ -1,6 +1,6 @@
 import { ChevronDown, Music, Users, Mic2, Mail, Phone, MapPin } from 'lucide-react';
 import background from '@/assets/rockroom-background.jpg';
-import logo from '@/assets/rockroom-logo.png';
+import logo from '@/assets/rockfu-logo.jpg';
 import { Link } from 'react-router-dom';
 
 // Demo page showing "Rock Fu" branding instead of "Rock Room"
