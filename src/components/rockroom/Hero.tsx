@@ -6,14 +6,13 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Banner Background Image */}
-      <div className="absolute top-32 md:top-40 left-0 right-0 h-96 md:h-[500px] lg:h-[600px] flex items-center justify-center">
-        <img 
-          src={bannerBg}
-          alt=""
-          className="w-full h-full object-contain"
-          style={{ transform: 'scale(0.35)' }}
-        />
-      </div>
+      <div 
+        className="absolute top-32 md:top-40 left-0 right-0 h-32 md:h-40 bg-no-repeat bg-center"
+        style={{ 
+          backgroundImage: `url(${bannerBg})`,
+          backgroundSize: '100% auto'
+        }}
+      />
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">
