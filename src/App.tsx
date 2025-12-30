@@ -16,6 +16,7 @@ import AdminDashboard from './pages/AdminDashboard';
 import AdminEnrollments from './pages/AdminEnrollments';
 import AdminUsers from './pages/AdminUsers';
 import AdminSettings from './pages/AdminSettings';
+import RockFuDemo from './pages/RockFuDemo';
 
 function HomePage() {
   return (
@@ -42,6 +43,7 @@ export default function App() {
           <EditModeProvider>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/rock-fu" element={<RockFuDemo />} />
               <Route path="/admin/login" element={<AdminLogin />} />
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/admin/enrollments" element={<AdminEnrollments />} />
