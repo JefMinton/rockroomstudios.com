@@ -11,7 +11,7 @@ const EnrollSection = () => {
         </h2>
         
         <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16 text-lg">
-          Choose your program and start your musical journey with Rock Room.
+          Choose your program and start your musical journey with Rock Fu.
         </p>
         
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">

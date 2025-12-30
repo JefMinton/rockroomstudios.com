@@ -3,7 +3,7 @@ import background from '@/assets/rockroom-background.jpg';
 import logo from '@/assets/rockfu-logo.jpg';
 import { Link } from 'react-router-dom';
 
-// Demo page showing "Rock Fu" branding instead of "Rock Room"
+// Demo page showing "Rock Fu" branding
 // This is a standalone demo page that doesn't affect the main site
 
 const RockFuDemo = () => {
@@ -229,7 +229,7 @@ const RockFuDemo = () => {
               to="/" 
               className="mt-2 text-primary hover:text-primary/80 transition-colors"
             >
-              ← Back to Rock Room version
+              ← Back to main site
             </Link>
           </div>
         </div>
