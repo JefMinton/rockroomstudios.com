@@ -1,6 +1,6 @@
 import { ChevronDown } from 'lucide-react';
 import background from '@/assets/rockroom-background.jpg';
-import RockFuLogo from './RockFuLogo';
+import heroLogo from '@/assets/rockfu-hero-logo.jpg';
 
 const Hero = () => {
   return (
@@ -17,15 +17,12 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">
-        <h1 className="mb-4">
-          <RockFuLogo />
-        </h1>
-        <div className="text-primary neon-glow font-oswald text-2xl md:text-3xl lg:text-4xl font-semibold mb-6">
-          UNDERGROUND LIVE
-        </div>
-        <p className="text-xl md:text-2xl text-foreground/90 font-oswald tracking-widest mb-8">
-          PLAY TO LEARN
-        </p>
+        {/* Hero Logo */}
+        <img 
+          src={heroLogo} 
+          alt="Rock Fu - Underground Live - Play to Learn" 
+          className="w-full max-w-md md:max-w-lg lg:max-w-xl mx-auto mb-8"
+        />
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
           Where musicians become bands. Professional music education at Camp Hill's iconic Underground Live venue.
         </p>
