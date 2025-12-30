@@ -1,5 +1,6 @@
 import { ChevronDown } from 'lucide-react';
 import background from '@/assets/rockroom-background.jpg';
+import RockFuLogo from './RockFuLogo';
 
 const Hero = () => {
   return (
@@ -16,8 +17,8 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">
-        <h1 className="font-oswald text-5xl md:text-7xl lg:text-8xl font-bold text-destructive mb-4">
-          ROCK FU
+        <h1 className="mb-4">
+          <RockFuLogo />
         </h1>
         <div className="text-primary neon-glow font-oswald text-2xl md:text-3xl lg:text-4xl font-semibold mb-6">
           UNDERGROUND LIVE
