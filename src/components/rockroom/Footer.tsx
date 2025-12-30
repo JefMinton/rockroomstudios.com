@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '@/assets/rockfu-circular-logo.jpg';
+import logo from '@/assets/rockfu-hero-logo.png';
 import bannerBg from '@/assets/rockfu-banner-bg.jpg';
 
 const Footer = () => {
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="red-line w-full my-8" />
+        <div className="w-full my-8 border-t border-border" />
         
         <div className="flex flex-col items-center gap-2 text-muted-foreground text-sm">
           <p>&copy; {new Date().getFullYear()} Rock Fu @ The Underground Live. All rights reserved.</p>
