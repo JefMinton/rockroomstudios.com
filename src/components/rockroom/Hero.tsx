@@ -1,19 +1,9 @@
 import { ChevronDown } from 'lucide-react';
-import background from '@/assets/rockroom-background.jpg';
 import heroLogo from '@/assets/rockfu-hero-logo.jpg';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image - scales proportionally */}
-      <img 
-        src={background}
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover object-center"
-      />
-      
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">
