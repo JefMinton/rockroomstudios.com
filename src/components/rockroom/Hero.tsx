@@ -4,14 +4,6 @@ import heroLogo from '@/assets/rockfu-hero-logo.png';
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Glowing Red Stripe */}
-      <div 
-        className="absolute top-0 left-0 right-0 h-1 md:h-1.5"
-        style={{ 
-          background: 'linear-gradient(90deg, transparent, hsl(var(--rock-red)), transparent)',
-          boxShadow: '0 0 20px hsl(var(--rock-red)), 0 0 40px hsl(var(--rock-red) / 0.5), 0 0 60px hsl(var(--rock-red) / 0.3)'
-        }}
-      />
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20">

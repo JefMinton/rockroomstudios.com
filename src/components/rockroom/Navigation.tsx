@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '@/assets/rockfu-circular-logo.jpg';
+import logo from '@/assets/rockfu-circular-logo.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,8 +13,16 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border overflow-hidden">
+      {/* Glowing Red Stripe Background */}
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{ 
+          background: 'linear-gradient(90deg, transparent, hsl(var(--rock-red)), transparent)',
+          boxShadow: '0 0 40px hsl(var(--rock-red) / 0.5)'
+        }}
+      />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex items-center justify-between h-20">
 {/* Logo */}
           <a href="#" className="flex items-center gap-3">

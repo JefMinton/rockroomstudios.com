@@ -10,8 +10,8 @@ const Footer = () => {
         className="absolute inset-0 opacity-30"
         style={{ 
           backgroundImage: `url(${bannerBg})`,
-          backgroundSize: 'contain',
-          backgroundPosition: 'right center',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
       />
