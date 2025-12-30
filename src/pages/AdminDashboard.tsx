@@ -63,7 +63,7 @@ export default function AdminDashboard() {
           <div className="flex items-center gap-4">
             <img 
               src={logo} 
-              alt="Rock Room" 
+              alt="Rock Fu" 
               className="h-12 w-auto drop-shadow-[0_0_8px_hsl(var(--primary))]" 
             />
             <div>

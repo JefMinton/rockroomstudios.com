@@ -90,7 +90,7 @@ export default function AdminLogin() {
       <div className="rock-card p-8 max-w-md w-full rounded-sm text-center">
         <img 
           src={logo} 
-          alt="Rock Room" 
+          alt="Rock Fu" 
           className="h-24 w-auto mx-auto mb-6 drop-shadow-[0_0_12px_hsl(var(--primary))]" 
         />
         

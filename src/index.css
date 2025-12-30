@@ -8,7 +8,7 @@
 :root {
   --font-size: 16px;
   
-  /* Rock Room Dark Theme */
+  /* Rock Fu Dark Theme */
   --background: hsl(0, 0%, 5%);
   --foreground: hsl(0, 0%, 95%);
   --card: hsl(0, 0%, 10%);
@@ -38,7 +38,7 @@
   --font-weight-normal: 400;
   --ring: hsl(120, 100%, 45%);
   
-  /* Rock Room specific colors */
+  /* Rock Fu specific colors */
   --neon-green: hsl(120, 100%, 45%);
   --rock-red: hsl(0, 85%, 50%);
   --stage-black: hsl(0, 0%, 3%);
