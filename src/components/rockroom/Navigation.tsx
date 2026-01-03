@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from '@/assets/rockfu-circular-logo.png';
 import navBanner from '@/assets/rockfu-nav-banner.png';
+import musicalArtsInstruction from '@/assets/musical-arts-instruction.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +26,16 @@ const Navigation = () => {
           backgroundRepeat: 'no-repeat'
         }}
       />
+      
+      {/* Musical Arts Instruction Overlay - Centered */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <img 
+          src={musicalArtsInstruction} 
+          alt="Musical Arts Instruction" 
+          className="h-16 md:h-20 w-auto object-contain"
+        />
+      </div>
+      
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex items-center justify-between h-20">
 {/* Logo */}
