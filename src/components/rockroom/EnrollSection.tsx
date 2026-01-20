@@ -1,4 +1,4 @@
-import { Mail, Phone, Guitar, User, CheckCircle } from 'lucide-react';
+import { Mail, Phone, Guitar, User, CheckCircle, Star } from 'lucide-react';
 
 const EnrollSection = () => {
   return (
@@ -141,12 +141,12 @@ const EnrollSection = () => {
           {/* Rock Band Card */}
           <div id="enroll-rock-band" className="rock-card p-8 rounded-sm">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 bg-primary/10 rounded-sm flex items-center justify-center">
-                <Guitar className="w-7 h-7 text-primary" />
+              <div className="w-14 h-14 bg-secondary/10 rounded-sm flex items-center justify-center">
+                <Star className="w-7 h-7 text-secondary" />
               </div>
               <div>
                 <h3 className="font-oswald text-2xl font-bold">ROCK BAND</h3>
-                <div className="text-primary text-sm uppercase tracking-wider">The Flagship</div>
+                <div className="text-secondary text-sm uppercase tracking-wider font-semibold">The Flagship</div>
               </div>
             </div>
             
