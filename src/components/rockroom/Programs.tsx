@@ -50,13 +50,13 @@ const Programs = () => {
                 🎓 Scholarship Opportunities Available
               </p>
               <p className="text-xs text-muted-foreground">
-                We're pursuing making this program free through donations, sponsors, and grants. Currently, we offer sponsor recognition for anyone willing to sponsor a student. Each student receives a sponsorship package to help earn funds.
+                Our goal is to make this program free for all students through donations, sponsors, and grants. Currently, we offer sponsor recognition for anyone willing to sponsor a student. Each student receives a sponsorship package to help earn funds.
               </p>
             </div>
             
             <ul className="space-y-3 mb-8">
               {[
-                "Must hold a beat, carry a tune, or play basic chords minimum",
+                "Must be able to hold a beat, carry a tune, or play basic chords minimum",
                 "Total Immersion: Pick a sub-genre and become it",
                 "Showcase Video: We document your journey from day one",
                 "Professional Launchpad: Walk away with a basic EPK",
@@ -100,10 +100,10 @@ const Programs = () => {
             
             <div className="bg-primary/10 border border-primary/30 rounded-sm p-3 mb-6">
               <p className="text-sm text-primary font-semibold mb-2">
-                🎸 Group Lessons & Band Coaching
+                🎸 Group Lessons & Private Band Coaching
               </p>
               <p className="text-xs text-muted-foreground">
-                Private band coaching available for up to 8 people. Add $10 per half hour per additional person. Minimum 1 hour required for group instruction.
+                Group lessons and private band coaching available for up to 8 people. Add $10 per half hour per additional person. Minimum 1 hour required for group instruction.
               </p>
             </div>
             
