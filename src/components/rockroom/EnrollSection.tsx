@@ -17,7 +17,7 @@ const EnrollSection = () => {
         {/* Emphasized Contact CTA */}
         <div className="text-center mb-16">
           <p className="text-xl md:text-2xl font-oswald text-foreground mb-4">
-            To enroll in <span className="text-primary font-bold">Private Lessons</span> or audition for <span className="text-primary font-bold">Rock Band</span>, please email Jef at:
+            To enroll in <span className="text-secondary font-bold">Private Lessons</span> or audition for <span className="text-secondary font-bold">Rock Band</span>, please email Jef at:
           </p>
           <a 
             href="mailto:jeff.a.minton@gmail.com" 
