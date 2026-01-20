@@ -1,4 +1,4 @@
-import { Check, Star, Zap } from 'lucide-react';
+import { Check, Star, User } from 'lucide-react';
 
 const Programs = () => {
   return (
@@ -19,56 +19,6 @@ const Programs = () => {
         </p>
         
         <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Band Class (Sandbox) */}
-          <div className="rock-card p-8 rounded-sm flex flex-col">
-            <div className="flex items-center gap-3 mb-4">
-              <Zap className="w-8 h-8 text-primary" />
-              <h3 className="font-oswald text-2xl font-bold">BAND CLASS</h3>
-            </div>
-            <div className="text-sm text-primary font-semibold uppercase tracking-wider mb-4">
-              The Sandbox
-            </div>
-            
-            <p className="text-muted-foreground mb-6">
-              Open Enrollment. Minimal experience required. Full band environment. All instruments welcome. A low-pressure, high-energy environment to find your footing, try out different instruments and band roles, jam with a variety of other musicians, socialize, and build confidence before hitting the main stage.
-            </p>
-            
-            <div className="mb-4">
-              <div className="text-3xl font-bold text-foreground">
-                $100<span className="text-lg text-muted-foreground font-normal">/month</span>
-              </div>
-              <div className="text-sm text-primary mt-1">First class is FREE!</div>
-            </div>
-            
-            <div className="bg-primary/10 border border-primary/30 rounded-sm p-3 mb-6">
-              <p className="text-sm text-primary font-semibold">
-                📢 Enrollment now open for the week of January 15th, pending min enrollment. Stay tuned for updates on meeting times!
-              </p>
-            </div>
-            
-            <ul className="space-y-3 mb-8">
-              {[
-                "Weekly 60-minute guided group sessions",
-                "Youth & Adult sessions available",
-                "Learn to play your instrument naturally in a band",
-                "Have fun :)",
-                "Cancel anytime"
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <a 
-              href="#enroll-band-practice" 
-              className="btn-rock-outline py-3 rounded-sm text-center block mt-auto"
-            >
-              Join Band Class
-            </a>
-          </div>
-          
           {/* Rock Band (Flagship) */}
           <div className="rock-card p-8 rounded-sm flex flex-col relative overflow-hidden">
             {/* Featured badge */}
@@ -121,6 +71,72 @@ const Programs = () => {
               className="btn-rock py-3 rounded-sm text-center block mt-auto"
             >
               Submit Your Audition
+            </a>
+          </div>
+          
+          {/* Private Lessons */}
+          <div className="rock-card p-8 rounded-sm flex flex-col">
+            <div className="flex items-center gap-3 mb-4">
+              <User className="w-8 h-8 text-primary" />
+              <h3 className="font-oswald text-2xl font-bold">PRIVATE LESSONS</h3>
+            </div>
+            <div className="text-sm text-primary font-semibold uppercase tracking-wider mb-4">
+              One-on-One Instruction
+            </div>
+            
+            <p className="text-muted-foreground mb-6">
+              Personalized instruction tailored to your goals. Whether you're just starting out or looking to sharpen your skills before auditioning for Rock Band, private lessons give you the focused attention you need to grow.
+            </p>
+            
+            <div className="mb-4">
+              <div className="text-2xl font-bold text-foreground mb-2">
+                Individual Rates:
+              </div>
+              <div className="space-y-1 text-sm">
+                <div className="flex justify-between">
+                  <span>30 minutes</span>
+                  <span className="font-semibold">$30</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>1 hour</span>
+                  <span className="font-semibold">$60</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>1.5 hours</span>
+                  <span className="font-semibold">$90</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-primary/10 border border-primary/30 rounded-sm p-3 mb-6">
+              <p className="text-sm text-primary font-semibold mb-2">
+                🎸 Group Lessons & Band Coaching
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Private band coaching available for up to 8 people. Add $10 per half hour per additional person. Minimum 1 hour required for group instruction.
+              </p>
+            </div>
+            
+            <ul className="space-y-3 mb-8">
+              {[
+                "All skill levels welcome",
+                "Flexible scheduling",
+                "Guitar, bass, drums, vocals, keys & more",
+                "Build your foundation before joining Rock Band",
+                "Learn at your own pace"
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <a 
+              href="#enroll-private-lessons" 
+              className="btn-rock-outline py-3 rounded-sm text-center block mt-auto"
+            >
+              Book Private Lessons
             </a>
           </div>
         </div>
