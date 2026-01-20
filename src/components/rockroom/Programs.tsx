@@ -70,7 +70,7 @@ const Programs = () => {
             </ul>
             
             <a 
-              href="#enroll-rock-band" 
+              href="#enroll" 
               className="btn-rock py-3 rounded-sm text-center block mt-auto"
             >
               Submit Your Audition
@@ -123,7 +123,7 @@ const Programs = () => {
             </ul>
             
             <a 
-              href="#enroll-private-lessons" 
+              href="#enroll" 
               className="btn-rock-outline py-3 rounded-sm text-center block mt-auto"
             >
               Book Private Lessons
