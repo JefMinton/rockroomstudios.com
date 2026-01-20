@@ -46,8 +46,11 @@ const Programs = () => {
             </div>
             
             <div className="bg-secondary/10 border border-secondary/30 rounded-sm p-3 mb-6">
-              <p className="text-sm text-secondary font-semibold">
-                📢 Enrollment now open for the week of January 15th, pending min enrollment. Stay tuned for updates on meeting times!
+              <p className="text-sm text-secondary font-semibold mb-2">
+                🎓 Scholarship Opportunities Available
+              </p>
+              <p className="text-xs text-muted-foreground">
+                We're pursuing making this program free through donations, sponsors, and grants. Currently, we offer sponsor recognition for anyone willing to sponsor a student. Each student receives a sponsorship package to help earn funds.
               </p>
             </div>
             
@@ -89,23 +92,10 @@ const Programs = () => {
             </p>
             
             <div className="mb-4">
-              <div className="text-2xl font-bold text-foreground mb-2">
-                Individual Rates:
+              <div className="text-3xl font-bold text-foreground">
+                $30<span className="text-lg text-muted-foreground font-normal">/30 min</span>
               </div>
-              <div className="space-y-1 text-sm">
-                <div className="flex justify-between">
-                  <span>30 minutes</span>
-                  <span className="font-semibold">$30</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>1 hour</span>
-                  <span className="font-semibold">$60</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>1.5 hours</span>
-                  <span className="font-semibold">$90</span>
-                </div>
-              </div>
+              <div className="text-sm text-muted-foreground mt-1">$60/hour • $90/1.5 hours</div>
             </div>
             
             <div className="bg-primary/10 border border-primary/30 rounded-sm p-3 mb-6">
