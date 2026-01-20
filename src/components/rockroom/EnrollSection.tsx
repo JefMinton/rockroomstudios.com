@@ -20,12 +20,15 @@ const EnrollSection = () => {
             To enroll in <span className="text-secondary font-bold">Private Lessons</span> or audition for <span className="text-secondary font-bold">Rock Band</span>, please email Jef at:
           </p>
           <a 
-            href="mailto:jeff.a.minton@gmail.com" 
+            href="mailto:jeff.a.minton@gmail.com?subject=ROCK%20FU%3A%20%5BYour%20Name%5D" 
             className="inline-flex items-center gap-3 text-2xl md:text-3xl font-bold text-primary hover:text-primary/80 transition-colors neon-glow-subtle"
           >
             <Mail className="w-8 h-8" />
             jeff.a.minton@gmail.com
           </a>
+          <p className="text-muted-foreground text-sm mt-3">
+            Use the subject line: <span className="text-foreground font-semibold">ROCK FU: [Your Name]</span>
+          </p>
         </div>
         
         {/* Enrollment Information Card */}
